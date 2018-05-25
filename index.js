@@ -1,13 +1,13 @@
 /*const foo = {template:'<div>Foo</div>'}
 const bar = {template:'<div>Bar</div>'}
 const router = new VueRouter({
-	routes:[
-		{path:'/foo',component:foo},
-		{path:'/bar',component:bar}
-	]
+  routes:[
+    {path:'/foo',component:foo},
+    {path:'/bar',component:bar}
+  ]
 })
 const vm = new Vue({
-	router
+  router
 }).$mount('#app')
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
@@ -49,7 +49,7 @@ const router = new VueRouter({
         // UserHome will be rendered inside User's <router-view>
         // when /user/:id is matched
         { path: '', component: UserHome },
-				
+        
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
         { path: 'profile', component: UserProfile },
@@ -68,22 +68,22 @@ const app = new Vue({ router }).$mount('#app')*/
 // const Baz = { template: '<div>baz</div>' }
 
 // const router = new VueRouter({
-// 	mode: 'history',
-//   	routes: [
+//  mode: 'history',
+//    routes: [
 //     { path: '/a',
 //       component:Foo,
 //       beforeEnter: (to, from, next) => {
-// 	        console.log('小弟B：哎呀妈呀！大兄弟，这是要去哪呀？', to)
-// 	        console.log('小弟A：大兄弟，哪儿旮沓的呀！', from)
-// 	        next() // 大哥：过去吧！
-// 	        // 调用next通过路由
-// 	  }
-// 	}
+//          console.log('小弟B：哎呀妈呀！大兄弟，这是要去哪呀？', to)
+//          console.log('小弟A：大兄弟，哪儿旮沓的呀！', from)
+//          next() // 大哥：过去吧！
+//          // 调用next通过路由
+//    }
+//  }
 //   ]
 // })
 
 // new Vue({
-// 	router,
+//  router,
 //   el: '#app'
 // })
 /*Vue.component('todo-item', {
@@ -128,6 +128,7 @@ if (subject.length == 0) {
 }
 var page = params[1];
 var limit = params[2];
+var walletExist = isWalletExist();
 
 var myDate = new Date();
 Vue.component('list-item',{
@@ -150,6 +151,8 @@ Vue.component('list-item',{
 var vm = new Vue({
   el:'#todo-list-example',
   data:{
+    walletExist:walletExist,
+    walletAlert:false,
     subject:subject,
     current:page,
     limit:limit,
@@ -169,6 +172,10 @@ var vm = new Vue({
   },
   methods:{
     addNewComment: function () {
+      if (this.walletExist == false) {
+        alert('请先安装webExtensionWallet钱包');
+        return;
+      }
       if (this.text.length == 0) {
         alert('请输入评论后再提交！');
         return;
@@ -203,6 +210,15 @@ var vm = new Vue({
     }
   }
 })
+
+function isWalletExist() {
+    //if the extension is installed, var "webExtensionWallet" will be injected in to web page
+    if (typeof (webExtensionWallet) === "undefined") {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 var InfoItem = function() {
     this.comment = '0';
