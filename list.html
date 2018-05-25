@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="app" style="min-height: 800px">
+<!--   <h1>Hello App!</h1>
+<p>
+  <router-link to="/user/foo">Go to Foo</router-link>
+  <router-link to="/user/bar">Go to Bar</router-link>
+</p>
+
+<router-view></router-view>
+</div> -->
+<!-- <div id="app">
+  <p>
+    <router-link to="/user/foo">/user/foo</router-link>
+    <router-link to="/user/foo/profile">/user/foo/profile</router-link>
+    <router-link to="/user/foo/posts">/user/foo/posts</router-link>
+  </p>
+  <router-view></router-view>
+</div> -->
+<!-- <div id="app">
+  <h1>Named Views</h1>
+  <ul>
+    <li>
+      <router-link to="/a">/a</router-link>
+    </li>
+    <li>
+      <router-link to="/b">/other</router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
+
+</div> -->
+<!-- <div id="todo-list-example">
+  <input
+    v-model="newTodoText"
+    v-on:keyup.enter="addNewTodo"
+    placeholder="Add a todo"
+  >
+  <ul>
+    <li
+      is="todo-item"
+      v-for="(todo, index) in todos"
+      v-bind:title="todo"
+      v-on:remove="todos.splice(index, 1)"
+    ></li>
+  </ul>
+</div> -->
+  <div id="todo-list-example">
+    <h1>{{subject}}</h1>
+    <br>
+    <h3 class="list-title"><span>Comments</span><a class="" id='comment-num'>{{comment}}条评论</a></h3>
+    <div is="list-item" v-for="(item,index) in items"  :parent="items[index]" :username="listName[index]" :time="listTime[index]"></div>
+
+    <ul class="pagination">
+        <li v-show="current != 1" @click="current-- && goto(current--)">
+            <a href="#">上一页</a>
+        </li>
+        <li v-for="index in pages" @click="goto(index)" :class="{'active':current == index}" :key="index">
+            <a href="#">{{index}}</a>
+        </li>
+        <li v-show="allpage != current && allpage != 0 " @click="current++ && goto(current++)">
+            <a href="#">下一页</a>
+        </li>
+    </ul>
+
+    <!--评论功能-->
+    <div class="comments">
+      <!-- <h3>Welcome back,<a href="#" @click="activeBtn"> [修改]</a></h3>
+      <div id="user" class="user">
+        <input type="text" placeholder="Name" v-model="message">
+        <input type="text" placeholder="E_mail">
+        <input type="text" placeholder="Blog">
+      </div> -->
+      <textarea v-model="text" v-text="text" v-on:keyup.ctrl.enter="addNewComment"></textarea>
+      <button @click="addNewComment">发布评论</button>
+    </div>
+  </div>
+  <!---->
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>
+  <script type="text/javascript" src="./dist/nebulas.js"></script>
+  <script type="text/javascript" src="./dist/nebPay.js"></script>
+	<script src="index.js"></script>
+</div>
+  <!--copy-->
+  <div class="copy-section">
+    <div class="container">
+      <p>Copyright &copy; 2018.Hongjie Wang All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

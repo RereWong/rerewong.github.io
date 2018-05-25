@@ -1,0 +1,108 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>OnlineCarhailingEvaluation</title>
+	<!---css--->
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<!---css--->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Online Car-hailing Evaluation" />
+	<!---fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="./dist/jquery-3.3.1.min.js"></script>
+	<!---fonts-->
+	<link href="css/owl.carousel.css" rel="stylesheet">
+<style>
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+</head>
+
+<!---body--->
+<body>
+
+<div id="app" style="min-height: 800px">
+	<!---header--->
+	<div class="header-section">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<div class="navbar-brand">
+						<h1><a href="didi.html">网约车评价</a></h1>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</nav>
+		</div>
+	</div>
+	<!---header--->
+
+
+
+	<!---banner--->
+	<div class="banner-section">
+		<div class="container">
+			<h2>安全出行 平安回家</h1>
+		</div>
+	</div>
+	<!---banner--->
+
+	<!---下拉框--->
+	<div class="content">
+		<div class="place-section">
+			<div class="container">
+
+				<div class="input-group col-md-10 form-group" style="margin:20p auto;">
+    
+                    <input type="text" class="form-control input-lg" placeholder="请输入车牌号" id=search-subject />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-search btn-lg" id=search>查看评论</button>
+
+                    </span>
+                </div>
+
+			</div>
+		</div>
+        <div class="blog-section">
+                <div class="container">
+                    <h2>使用说明</h2><br>
+                    <div class="blog-grids">
+                        <div class="col-md-10 blog-grid"><h3>输入车牌号(eg:沪A88888)，点击查看评论，不需要花费GAS<br>进入评价界面可以提交评价，提交后需等待片刻，您的评价就会永久保存在本网站中。</h3></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+	</div>
+
+<script>
+    $("#search").click(function () {
+        const regex  = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/;
+        var subject = $("#search-subject").val();
+        if (subject.length > 0 && subject.match(regex)) {
+            window.location = "./list.html" + "?subject=" + subject;           
+        } else {
+            alert('请输入正确的车牌号');
+        }
+    });
+</script>
+</div>
+
+	<!--copy-->
+	<div class="copy-section">
+		<div class="container">
+			<p>Copyright &copy; 2018.Hongjie Wang All rights reserved.</p>
+		</div>
+	</div>
+
+</body>
+</html>

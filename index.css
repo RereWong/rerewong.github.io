@@ -1,0 +1,132 @@
+/*默认样式*/
+body {
+  color: #5c5c5c;
+  background: #F3F3F3;
+  font-family: miranafont,"Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif;
+  font-size: 14px;
+  text-align: center; 
+}
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, tr {
+  margin: 0;
+  padding: 0; 
+}
+input, select {
+  font-size: 16px;
+  vertical-align: middle; 
+}
+textarea, input {
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0; 
+}
+li {
+  list-style-type: none; 
+}
+img {
+  border: 0 none; 
+}
+a {
+  color: #5c5c5c;
+  font-size: 14px;
+  text-decoration: none; 
+}
+/*留言板基本样式*/
+#todo-list-example {
+  overflow: hidden;
+  width: 860px;
+  margin: 10px auto;
+}
+.list-title {
+  width: 100%;
+  font-size: 18px;
+  color: #7D7D7D;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.list-title span::after {
+  content: '|';
+  padding: 0 8px;
+}
+.list-column {
+  margin-bottom: 20px;
+}
+.list-column-head,.info {
+  overflow: hidden;
+}
+.list-column-head img {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+.info {
+  width: 790px;
+  height: 40px;
+  border-bottom: 1px dashed #ddd;
+}
+.info-user a {
+  font-size: 16px;
+}
+.info-user {
+  float: left;
+}
+.comment-date,
+.reply {
+  float: right;
+}
+.comment-date {
+  color: #DADADA;
+  margin-right: 10px;
+}
+.reply {
+  color: #9499a8;
+}
+.list-column-body p {
+  text-align: left;
+  line-height: 30px;
+}
+.user {
+  overflow: hidden;
+  height: 0px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.comments h3 {
+  font-weight: 400;
+  text-align: left;
+}
+.user input {
+  float: left;
+  width: 261px;
+  height: 54px;
+  margin-right: 17px;
+  padding-left: 10px;
+  border: 2px solid #DDE6EA;
+  outline: none;
+}
+.comments input:last-child {
+  margin-right: 0;
+}
+.comments textarea {
+  width: 856px;
+  height: 200px;
+  max-width: 856px;
+  max-height: 200px;
+  font-size: 14px;
+  outline: none;
+  border: 2px solid #DDE6EA;
+}
+.comments button {
+  float: left;
+  width: 126px;
+  height: 44px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #5bc0de;
+  border: none;
+  border-radius: 2px;
+}
+.comments button:hover {
+  background-color: #DDD;
+}
