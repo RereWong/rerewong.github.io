@@ -123,6 +123,9 @@ var serialNumber;
 
 var params = getParams();
 var subject = decodeURI(params[0]);
+if (subject.length == 0) {
+  window.location = './car.html';
+}
 var page = params[1];
 var limit = params[2];
 
