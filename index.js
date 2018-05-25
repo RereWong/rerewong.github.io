@@ -113,9 +113,9 @@ new Vue({
   }
 })*/
 "use strict";
-var dappContactAddress = "n21QNhmQDT4NmbpbGe8HXAHvfiF8rbk6qj2";
+var dappContactAddress = "n1x9E8R9BzgqqtXsyPcbBEv9HzRLqU9i7Z6";
 var nebulas = require("nebulas"), Account = Account, neb = new nebulas.Neb();
-neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"))
+neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
 
 var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
 var nebPay = new NebPay();
@@ -239,7 +239,7 @@ function saveComment(subject, comment) {
   console.log(callArgs);
 
   serialNumber = nebPay.call(to, value, callFunction, callArgs, {    //使用nebpay的call接口去调用合约,
-      callback: NebPay.config.testnetUrl,
+      callback: NebPay.config.mainnetUrl,
       listener: function (resp) {
           console.log("thecallback is " + JSON.stringify(resp));
           // 延迟5秒执行
